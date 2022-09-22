@@ -27,7 +27,7 @@ console.log(Dealership1.getCars());
 console.log(Dealership1.getCars().length); //Shows number of cars in dealership
 
 
-// Trying different approach
+// Trying different approach (bad code doesn't work)
 
 // const DealerName = (dealership)=> Dealership.getName();
 // const CarSpaces = (dealership)=> Dealership.getCarSpaces();

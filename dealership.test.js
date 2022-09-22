@@ -26,3 +26,32 @@ test('it should have 2 cars in dealership', () => {
 
     expect(Dealership1.getCars().length).toBe(2);
 });
+
+// Using toStrictEqual works and passes the test
+
+
+test('it should return an Array containing cars manufacturer', () => {
+    
+
+    let manufactureList = Dealership1.getCars().map((cars)=> cars.getManufacturer());
+
+    expect(manufactureList).toStrictEqual(["Ferrari", "Mercedes"]);
+});
+
+test('it should return Car2 due to filter', () => {
+let filteredCars =  Dealership1.getCars().filter(function(cars) {
+    return cars.getManufacturer() == "Mercedes";
+});
+
+expect(filteredCars).toStrictEqual([Car2]);
+
+});
+
+test('it should be able to sum values of all cars in the dealership', () => {
+    let sumCarValue = Dealership1.getCars().reduce((accumulator, object) => {
+        return accumulator + object.getPrice();
+     }, 0);
+    
+    expect(sumCarValue).toBe(280000);
+    
+    });
