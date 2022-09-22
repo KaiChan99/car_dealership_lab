@@ -35,14 +35,21 @@ console.log(Dealership1.getCars().length); //Shows number of cars in dealership
 
 
 
-
+// console.log(Dealership1.getCars().map((cars)=> cars.getManufacturer())); // This puts all the manufacturers of the cars in the dealership into an array
 
 let manufactureList = Dealership1.getCars().map((cars)=> cars.getManufacturer());
 
 console.log(manufactureList);
 
+// It filters properly but doesn't display which specific object it is
+let filteredCars =  Dealership1.getCars().filter(function(cars) {
+    return cars.getManufacturer() == "Ferrari";
+});
 
-// console.log(Dealership1.getCars().map((cars)=> cars.getManufacturer())); // This puts all the manufacturers of the cars in the dealership into an array
+console.log(filteredCars);
+
+
+
 
 
 module.exports = {Dealership}
