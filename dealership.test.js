@@ -1,17 +1,28 @@
-const{ Dealership
+const{ Dealership} = require('./dealership');
+const{ Car} = require('./car');
 
-} = require('./dealership');
 
-let dealership1;
 
-beforeEach(() => {
-    dealership1 = new Dealership("Bob's dealership", 5);
-});
+
+
+   let Dealership1 = new Dealership("Bob's dealership", 5);
+
+   let Car1 = new Car("Ferrari", 200000, "V10");
+
+   let Car2 = new Car("Mercedes", 80000, "V10");
+
 
 test('it should have a name', () => {
-    expect(dealership1.getName()).toBe("Bob's dealership");
+    expect(Dealership1.getName()).toBe("Bob's dealership");
 });
 
 test('it should have car spaces', () => {
-    expect(dealership1.getCarSpaces()).toBe(5);
+    expect(Dealership1.getCarSpaces()).toBe(5);
+});
+
+test('it should have 2 cars in dealership', () => {
+    Dealership1.addCars(Car1);
+    Dealership1.addCars(Car2);
+
+    expect(Dealership1.getCars().length).toBe(2);
 });
