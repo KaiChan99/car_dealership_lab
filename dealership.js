@@ -49,6 +49,13 @@ let filteredCars =  Dealership1.getCars().filter(function(cars) {
 console.log(filteredCars);
 
 
+// It sums up the value of all the cars in the dealership
+ let sumCarValue = Dealership1.getCars().reduce((accumulator, object) => {
+    return accumulator + object.getPrice();
+ }, 0);
+
+ console.log(sumCarValue);
+
 
 
 
