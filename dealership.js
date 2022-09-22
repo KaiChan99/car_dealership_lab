@@ -34,4 +34,15 @@ console.log(Dealership1.getCars().length); //Shows number of cars in dealership
 // const ListCars = (dealership)=> Dealership.getCars();
 
 
+
+
+
+let manufactureList = Dealership1.getCars().map((cars)=> cars.getManufacturer());
+
+console.log(manufactureList);
+
+
+// console.log(Dealership1.getCars().map((cars)=> cars.getManufacturer())); // This puts all the manufacturers of the cars in the dealership into an array
+
+
 module.exports = {Dealership}
